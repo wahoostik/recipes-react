@@ -1,24 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import './style.scss';
 
 const Menu = ({ recipes }) => (
   <nav className="menu">
-    <a
-      className="menu-link menu-link--active"
-      href="/"
+    <NavLink
+      className="menu-link"
+      to="/"
+      activeClassName="menu-link--active" // actif quand je suis sur cet url
+      exact // si on veux que le lien actif réponde, il ne faut pas oublier "exact"
     >
       Accueil
-    </a>
+    </NavLink>
     {recipes.map((recipe) => (
-      <a
+      <NavLink
         key={recipe.id}
         className="menu-link"
-        href={`/recipe/${recipe.slug}`}
+        to={`/recipe/${recipe.slug}`}
+        activeClassName="menu-link--active"
+        exact
       >
         {recipe.title}
-      </a>
+      </NavLink>
     ))}
   </nav>
 );
