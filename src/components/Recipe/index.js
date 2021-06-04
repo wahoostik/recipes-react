@@ -7,7 +7,6 @@ import { Redirect } from 'react-router-dom';
 // == Import : local
 // Composants
 import Page from 'src/components/Page';
-import AppHeader from 'src/components/AppHeader';
 import Header from './Header';
 import Ingredients from './Ingredients';
 import Instructions from './Instructions';
@@ -22,7 +21,6 @@ function Recipe({ recipe }) {
   }
   return (
     <Page>
-      <AppHeader />
       <div className="recipe">
         <Header
           name={recipe.title}
