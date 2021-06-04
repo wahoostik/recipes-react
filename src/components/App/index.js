@@ -1,10 +1,11 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
 
 import Menu from 'src/components/Menu';
 import Home from 'src/components/Home';
-// import Recipe from 'src/components/Recipe';
+import Recipe from 'src/components/Recipe';
 // import Error from 'src/components/Error';
 
 import recipesTest from 'src/data';
@@ -23,8 +24,12 @@ function App(props) {
   return (
     <div className="app">
       <Menu recipes={recipes.list} />
-      <Home recipes={recipes.list} />
-      {/* <Recipe recipe={recipesTest[0]} /> */}
+      <Route path="/" exact>
+        <Home recipes={recipes.list} />
+      </Route>
+      <Route path="/recipe/:slug" exact>
+        <Recipe recipe={recipesTest[0]} />
+      </Route>
       {/* <Error /> */}
     </div>
   );
