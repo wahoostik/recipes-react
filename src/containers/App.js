@@ -14,7 +14,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   fetchData: () => {
-    console.log('container app');
+    // console.log('container app');
     dispatch(fetchRecipes());
   },
 });

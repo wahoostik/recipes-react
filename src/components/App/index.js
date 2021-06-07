@@ -16,7 +16,7 @@ import './style.scss';
 
 function App({ loading, fetchData }) {
   useEffect(() => {
-    console.log('au 1er rendu, je veux charger les données');
+    // console.log('au 1er rendu, je veux charger les données');
     fetchData();
   }, []);
   if (loading) {

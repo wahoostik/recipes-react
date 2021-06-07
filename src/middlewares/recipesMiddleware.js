@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
-import { FETCH_RECIPES } from 'src/actions/recipesActions';
+import axios from 'axios';
+import { FETCH_RECIPES, saveRecipes } from 'src/actions/recipesActions';
 
 const recipesMiddleware = (store) => (next) => (action) => {
   console.log('state recipesMiddleware:', store.getState());
@@ -7,6 +8,21 @@ const recipesMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_RECIPES: {
       console.log('case', FETCH_RECIPES);
+      const fetchData = async () => {
+        try {
+          // const { responseData } = await axios.get('http://localhost:3001/recipes');
+          // const action = saveRecipes(responseData);
+
+          const response = await axios.get('http://localhost:3001/recipes');
+          const actionRecipes = saveRecipes(response.data);
+          store.dispatch(actionRecipes);
+          console.log(actionRecipes);
+        }
+        catch (error) {
+          console.trace(error);
+        }
+      };
+      fetchData();
       break;
     }
     default:
