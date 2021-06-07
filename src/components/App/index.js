@@ -1,6 +1,7 @@
+/* eslint-disable no-console */
 /* eslint-disable max-len */
 /* eslint-disable react/destructuring-assignment */
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 
@@ -13,8 +14,12 @@ import Loading from './Loading';
 
 import './style.scss';
 
-function App(props) {
-  if (props.loading) {
+function App({ loading, fetchData }) {
+  useEffect(() => {
+    console.log('au 1er rendu, je veux charger les données');
+    fetchData();
+  }, []);
+  if (loading) {
     return <Loading />;
   }
   return (
@@ -39,6 +44,7 @@ function App(props) {
 
 App.propTypes = {
   loading: PropTypes.bool,
+  fetchData: PropTypes.func.isRequired,
 };
 
 App.defaultProps = {
