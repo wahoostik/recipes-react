@@ -19,9 +19,12 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(action);
   },
   handleLogin: () => {
-    console.log('je veux me connecter');
+    // console.log('je veux me connecter');
     const action = login();
     dispatch(action);
+  },
+  handleLogout: () => {
+    console.log('je veux me déconnecter');
   },
 });
 

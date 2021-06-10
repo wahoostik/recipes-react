@@ -2,6 +2,7 @@
 export const CHANGE_VALUE = 'CHANGE_VALUE';
 export const LOGIN = 'LOGIN';
 export const SAVE_USER = 'SAVE_USER';
+export const LOGOUT = 'LOGOUT';
 
 // Action Creator
 export const changeValue = (valueAction, nameAction) => ({
@@ -17,4 +18,8 @@ export const login = () => ({
 export const saveUser = (userAction) => ({
   type: SAVE_USER,
   user: userAction,
+});
+
+export const logout = () => ({
+  type: LOGOUT,
 });
