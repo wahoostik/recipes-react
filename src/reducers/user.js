@@ -6,7 +6,9 @@ const initialState = {
   email: 'rudy.gobert@nba.com',
   password: 'utahjazz',
   infos: {
-    pseudo: '',
+    logged: false, // ce que l'API nous renvoie
+    pseudo: '', // ce que l'API nous renvoie
+    token: '', // ce que l'API nous renvoie
   },
 };
 
@@ -28,7 +30,8 @@ const userReducer = (state = initialState, action = {}) => {
         password: '',
         infos: {
           ...state.infos,
-          pseudo: action.user.pseudo,
+          // pseudo: action.user.pseudo,
+          ...action.user,
         },
       };
     }
