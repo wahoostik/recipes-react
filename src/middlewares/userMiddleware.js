@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import axios from 'axios';
-import { LOGIN } from 'src/actions/userActions';
+import { LOGIN, saveUser } from 'src/actions/userActions';
 
 const userMiddleware = (store) => (next) => async (action) => {
   // console.log('state:', store.getState());
@@ -15,6 +15,8 @@ const userMiddleware = (store) => (next) => async (action) => {
           password: state.userReducer.password,
         });
         console.log('reponse', response);
+        // ici on va stocker les infos que nous retourne la requête dans le state
+        // => modification de state => dispatch d'action
       }
       catch (error) {
         console.trace(error);
