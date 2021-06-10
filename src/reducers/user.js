@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 /* eslint-disable no-console */
-import { CHANGE_VALUE, SAVE_USER } from 'src/actions/userActions';
+import { CHANGE_VALUE, SAVE_USER, LOGOUT } from 'src/actions/userActions';
 
 const initialState = {
-  email: 'rudy.gobert@nba.com',
-  password: 'utahjazz',
+  email: '',
+  password: '',
   infos: {
     logged: false, // ce que l'API nous renvoie
     pseudo: '', // ce que l'API nous renvoie
@@ -33,6 +33,11 @@ const userReducer = (state = initialState, action = {}) => {
           // pseudo: action.user.pseudo,
           ...action.user,
         },
+      };
+    }
+    case LOGOUT: {
+      return {
+        ...initialState,
       };
     }
     default:

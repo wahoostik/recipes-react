@@ -3,7 +3,7 @@
 /* eslint-disable no-underscore-dangle */
 import { connect } from 'react-redux';
 import LoginForm from 'src/components/LoginForm';
-import { changeValue, login } from 'src/actions/userActions';
+import { changeValue, login, logout } from 'src/actions/userActions';
 
 const mapStateToProps = (state) => ({
   email: state.userReducer.email,
@@ -24,7 +24,9 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(action);
   },
   handleLogout: () => {
-    console.log('je veux me déconnecter');
+    // console.log('je veux me déconnecter');
+    const action = logout();
+    dispatch(action);
   },
 });
 
