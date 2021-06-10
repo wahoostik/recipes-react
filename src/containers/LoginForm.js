@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-underscore-dangle */
 import { connect } from 'react-redux';
@@ -12,7 +13,11 @@ const mapStateToProps = (state) => ({
   email: state.userReducer.email,
   password: state.userReducer.password,
 });
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  changeField: (value, name) => {
+    console.log('je veux changer les valeurs de email/password', value, name);
+  },
+});
 
 // on passe les 2 fonctions à connect
 // connect renvoie une fonction (closure)
