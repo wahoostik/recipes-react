@@ -3,7 +3,7 @@
 /* eslint-disable no-underscore-dangle */
 import { connect } from 'react-redux';
 import LoginForm from 'src/components/LoginForm';
-import { changeValue } from 'src/actions/userActions';
+import { changeValue, login } from 'src/actions/userActions';
 
 // branchement en lecture
 // retourne un objet (de props)
@@ -18,7 +18,12 @@ const mapDispatchToProps = (dispatch) => ({
   changeField: (value, name) => {
     // console.log('je veux changer les valeurs de email/password', value, name);
     const action = changeValue(value, name);
-    console.log(action);
+    // console.log(action);
+    dispatch(action);
+  },
+  handleLogin: () => {
+    console.log('je veux me connecter');
+    const action = login();
     dispatch(action);
   },
 });
