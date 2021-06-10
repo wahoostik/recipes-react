@@ -3,6 +3,7 @@
 import { combineReducers } from 'redux';
 import recipesReducer from './recipes';
 import userReducer from './user';
+import appReducer from './app';
 
 // Le reducer doit toujours retourner le state
 const globalReducer = combineReducers({
@@ -10,6 +11,7 @@ const globalReducer = combineReducers({
   test: (state = { stateTest: 'hello' }, action = {}) => state,
   recipesReducer,
   userReducer,
+  appReducer,
 });
 
 export default globalReducer;

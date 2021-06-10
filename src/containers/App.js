@@ -9,8 +9,7 @@ import { fetchRecipes } from 'src/actions/recipesActions';
 // retourne un objet (de props)
 // elle reçoit le state en params
 const mapStateToProps = (state) => ({
-// le nom de la propriété (clé) correspond avec la props du composant à connecter
-// ensuite on relie la propriété du state qu'on souhaite
+  loading: state.appReducer.loading,
 });
 const mapDispatchToProps = (dispatch) => ({
   fetchData: () => {
