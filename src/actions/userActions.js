@@ -14,6 +14,7 @@ export const login = () => ({
   type: LOGIN,
 });
 
-export const saveUser = () => ({
+export const saveUser = (userAction) => ({
   type: SAVE_USER,
+  user: userAction,
 });

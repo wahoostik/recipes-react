@@ -17,6 +17,9 @@ const userMiddleware = (store) => (next) => async (action) => {
         console.log('reponse', response);
         // ici on va stocker les infos que nous retourne la requête dans le state
         // => modification de state => dispatch d'action
+        const actionUser = saveUser(response.data);
+        store.dispatch(actionUser);
+        console.log(actionUser);
       }
       catch (error) {
         console.trace(error);
