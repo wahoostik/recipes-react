@@ -20,6 +20,14 @@ function App({ loading, fetchData, logged }) {
     // console.log('au 1er rendu, je veux charger les données');
     fetchData();
   }, []);
+
+  // chargement des favoris depuis App
+  // useEffect(() => {
+  //   if (logged) {
+  //     fetchFavorites();
+  //   }
+  // }, [logged]);
+
   if (loading) {
     return <Loading />;
   }
