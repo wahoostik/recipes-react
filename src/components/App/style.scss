@@ -14,8 +14,14 @@
 .app {
   animation: pop .5s;
   padding-left: vars.$menuWidth;
-  
+  background-color: white;
   @media (max-width: vars.$small) {
     padding-left: vars.$smallMenuWidth;
+  }
+  &--dark-mode {
+    filter: invert(100%);
+    img {
+      filter: invert(100%);
+    }
   }
 }

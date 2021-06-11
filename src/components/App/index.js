@@ -15,7 +15,9 @@ import Loading from './Loading';
 
 import './style.scss';
 
-function App({ loading, fetchData, logged }) {
+function App({
+  loading, fetchData, logged, onClickDarkMode, darkMode,
+}) {
   useEffect(() => {
     // console.log('au 1er rendu, je veux charger les données');
     fetchData();
@@ -28,11 +30,18 @@ function App({ loading, fetchData, logged }) {
   //   }
   // }, [logged]);
 
+  const handleOnClick = () => {
+    onClickDarkMode();
+  };
+
   if (loading) {
     return <Loading />;
   }
+  const classnames = darkMode ? 'app app--dark-mode' : 'app';
+
   return (
-    <div className="app">
+    <div className={classnames}>
+      <button type="button" onClick={handleOnClick}>Dark mode</button>
       <Menu />
       <Switch>
         <Route path="/" exact>
@@ -62,6 +71,8 @@ App.propTypes = {
   loading: PropTypes.bool,
   fetchData: PropTypes.func.isRequired,
   logged: PropTypes.bool.isRequired,
+  onClickDarkMode: PropTypes.func.isRequired,
+  darkMode: PropTypes.bool.isRequired,
 };
 
 App.defaultProps = {

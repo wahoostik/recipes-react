@@ -4,6 +4,7 @@
 import { connect } from 'react-redux';
 import App from 'src/components/App';
 import { fetchRecipes } from 'src/actions/recipesActions';
+import { changeMode } from 'src/actions/appActions';
 
 // branchement en lecture
 // retourne un objet (de props)
@@ -11,11 +12,16 @@ import { fetchRecipes } from 'src/actions/recipesActions';
 const mapStateToProps = (state) => ({
   loading: state.appReducer.loading,
   logged: state.userReducer.infos.logged,
+  darkMode: state.appReducer.darkMode,
 });
 const mapDispatchToProps = (dispatch) => ({
   fetchData: () => {
     // console.log('container app');
     dispatch(fetchRecipes());
+  },
+  onClickDarkMode: () => {
+    console.log('dark mode');
+    dispatch(changeMode());
   },
 });
 

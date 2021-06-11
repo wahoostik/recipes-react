@@ -1,7 +1,8 @@
-import { IS_LOADING } from 'src/actions/appActions';
+import { IS_LOADING, CHANGE_MODE } from 'src/actions/appActions';
 
 const initialState = {
   loading: true,
+  darkMode: false,
 };
 
 // Le reducer doit toujours retourner le state
@@ -12,6 +13,12 @@ const appReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         loading: action.status,
+      };
+    }
+    case CHANGE_MODE: {
+      return {
+        ...state,
+        darkMode: !state.darkMode,
       };
     }
     default:
