@@ -3,7 +3,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Menu from 'src/containers/Menu';
 import Home from 'src/containers/Home';
@@ -30,10 +30,12 @@ function App({ loading, fetchData, logged }) {
         <Route path="/" exact>
           <Home />
         </Route>
-        {logged && (
-        <Route path="/favorites" exact>
-          <Favorites />
-        </Route>
+        {logged ? (
+          <Route path="/favorites" exact>
+            <Favorites />
+          </Route>
+        ) : (
+          <Redirect from="/favorites" to="/" />
         )}
         <Route path="/recipe/:slug" exact>
           <Recipe />
