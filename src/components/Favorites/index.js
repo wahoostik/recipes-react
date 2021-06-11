@@ -7,8 +7,8 @@ import Content from 'src/components/Content';
 const Favorites = ({ favoritesRecipes }) => (
   <Page>
     <Content
-      title="Les recettes oRecipes"
-      text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, explicabo."
+      title="Mes recettes préférées"
+      text="Voici vos recettes favorites !"
       recipes={favoritesRecipes}
     />
   </Page>

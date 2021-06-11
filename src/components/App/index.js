@@ -7,7 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Menu from 'src/containers/Menu';
 import Home from 'src/containers/Home';
-import Favorites from 'src/components/Favorites';
+import Favorites from 'src/containers/Favorites';
 import Recipe from 'src/containers/Recipe';
 import Error from 'src/components/Error';
 

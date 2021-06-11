@@ -9,6 +9,7 @@ const initialState = {
     logged: false, // ce que l'API nous renvoie
     pseudo: '', // ce que l'API nous renvoie
     token: '', // ce que l'API nous renvoie
+    favoritesRecipes: [],
   },
 };
 
