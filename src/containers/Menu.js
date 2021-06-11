@@ -10,6 +10,7 @@ const mapStateToProps = (state) => ({
 // le nom de la propriété (clé) correspond avec la props du composant à connecter
 // ensuite on relie la propriété du state qu'on souhaite
   recipes: state.recipesReducer,
+  logged: state.userReducer.infos.logged,
 });
 const mapDispatchToProps = (dispatch) => ({});
 

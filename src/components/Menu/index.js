@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import './style.scss';
 
-const Menu = ({ recipes }) => (
+const Menu = ({ recipes, logged }) => (
   <nav className="menu">
     <NavLink
       className="menu-link"
@@ -14,14 +14,16 @@ const Menu = ({ recipes }) => (
     >
       Accueil
     </NavLink>
+    {logged && (
     <NavLink
       className="menu-link"
       to="/favorites"
       activeClassName="menu-link--active" // actif quand je suis sur cet url
-      exact // si on veux que le lien actif réponde, il ne faut pas oublier "exact"
+      exact
     >
       Mes recettes préférées
     </NavLink>
+    )}
     {recipes.map((recipe) => (
       <NavLink
         key={recipe.id}
@@ -44,6 +46,7 @@ Menu.propTypes = {
       slug: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  logged: PropTypes.bool.isRequired,
 };
 
 export default Menu;

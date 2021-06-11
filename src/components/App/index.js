@@ -15,7 +15,7 @@ import Loading from './Loading';
 
 import './style.scss';
 
-function App({ loading, fetchData }) {
+function App({ loading, fetchData, logged }) {
   useEffect(() => {
     // console.log('au 1er rendu, je veux charger les données');
     fetchData();
@@ -30,9 +30,11 @@ function App({ loading, fetchData }) {
         <Route path="/" exact>
           <Home />
         </Route>
+        {logged && (
         <Route path="/favorites" exact>
           <Favorites />
         </Route>
+        )}
         <Route path="/recipe/:slug" exact>
           <Recipe />
         </Route>
@@ -49,6 +51,7 @@ function App({ loading, fetchData }) {
 App.propTypes = {
   loading: PropTypes.bool,
   fetchData: PropTypes.func.isRequired,
+  logged: PropTypes.bool.isRequired,
 };
 
 App.defaultProps = {

@@ -10,6 +10,7 @@ import { fetchRecipes } from 'src/actions/recipesActions';
 // elle reçoit le state en params
 const mapStateToProps = (state) => ({
   loading: state.appReducer.loading,
+  logged: state.userReducer.infos.logged,
 });
 const mapDispatchToProps = (dispatch) => ({
   fetchData: () => {
