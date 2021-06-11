@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 /* eslint-disable no-console */
-import { CHANGE_VALUE, SAVE_USER, LOGOUT } from 'src/actions/userActions';
+import {
+  CHANGE_VALUE, SAVE_USER, LOGOUT, SAVE_FAV,
+} from 'src/actions/userActions';
 
 const initialState = {
   email: 'rudy.gobert@nba.com',
@@ -39,6 +41,15 @@ const userReducer = (state = initialState, action = {}) => {
     case LOGOUT: {
       return {
         ...initialState,
+      };
+    }
+    case SAVE_FAV: {
+      return {
+        ...state,
+        infos: {
+          ...state.infos,
+          favoritesRecipes: action.favorites,
+        },
       };
     }
     default:

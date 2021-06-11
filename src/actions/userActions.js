@@ -4,6 +4,7 @@ export const LOGIN = 'LOGIN';
 export const SAVE_USER = 'SAVE_USER';
 export const LOGOUT = 'LOGOUT';
 export const FETCH_FAV = 'FETCH_FAV';
+export const SAVE_FAV = 'SAVE_FAV';
 
 // Action Creator
 export const changeValue = (valueAction, nameAction) => ({
@@ -27,4 +28,9 @@ export const logout = () => ({
 
 export const fetchFav = () => ({
   type: FETCH_FAV,
+});
+
+export const saveFav = (saveFavAction) => ({
+  type: SAVE_FAV,
+  favorites: saveFavAction,
 });

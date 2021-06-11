@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import axios from 'axios';
 import {
-  LOGIN, saveUser, fetchFav, FETCH_FAV,
+  LOGIN, saveUser, fetchFav, FETCH_FAV, saveFav,
 } from 'src/actions/userActions';
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -47,6 +47,7 @@ const userMiddleware = (store) => (next) => (action) => {
             },
           });
           console.log('reponse favorites', response);
+          store.dispatch(saveFav(response.data.favorites));
         }
         catch (error) {
           console.trace(error);
