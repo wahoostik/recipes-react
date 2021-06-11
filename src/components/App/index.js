@@ -7,6 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Menu from 'src/containers/Menu';
 import Home from 'src/containers/Home';
+import Favorites from 'src/components/Favorites';
 import Recipe from 'src/containers/Recipe';
 import Error from 'src/components/Error';
 
@@ -28,6 +29,9 @@ function App({ loading, fetchData }) {
       <Switch>
         <Route path="/" exact>
           <Home />
+        </Route>
+        <Route path="/favorites" exact>
+          <Favorites />
         </Route>
         <Route path="/recipe/:slug" exact>
           <Recipe />

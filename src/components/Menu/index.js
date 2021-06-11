@@ -14,6 +14,14 @@ const Menu = ({ recipes }) => (
     >
       Accueil
     </NavLink>
+    <NavLink
+      className="menu-link"
+      to="/favorites"
+      activeClassName="menu-link--active" // actif quand je suis sur cet url
+      exact // si on veux que le lien actif réponde, il ne faut pas oublier "exact"
+    >
+      Mes recettes préférées
+    </NavLink>
     {recipes.map((recipe) => (
       <NavLink
         key={recipe.id}
