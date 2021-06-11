@@ -3,8 +3,8 @@
 import { CHANGE_VALUE, SAVE_USER, LOGOUT } from 'src/actions/userActions';
 
 const initialState = {
-  email: '',
-  password: '',
+  email: 'rudy.gobert@nba.com',
+  password: 'utahjazz',
   infos: {
     logged: false, // ce que l'API nous renvoie
     pseudo: '', // ce que l'API nous renvoie
