@@ -13,7 +13,7 @@ Télécharger ou cloner les repos.
 * Avoir installé Yarn sur sa machine (voir [la doc](https://yarnpkg.com/getting-started/install) pour un guide d'installation complet).
 
 ### Installer le serveur
-Lien du repo : https://github.com/wahoostik/chatroom-server
+Lien du repo : https://github.com/wahoostik/recipes-server
 
 ### Installer le projet
 
